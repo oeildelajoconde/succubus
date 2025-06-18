@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><i>whispers</i></title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="landing" class="landing-screen">
+    <div class="gif-placeholder">[ 🖼️ Place your GIF here ]</div>
+    <div class="landing-text"><i>A quiet place to linger between thoughts…</i></div>
+    <button class="enter-button" onclick="enterSite()">Enter</button>
+  </div>
+  <div id="site" class="container hidden">
+    <div class="sidebar">
+      <img src="avatar.jpg" class="profile-pic" alt="Angel Avatar">
+      <h1 class="blog-title"><i>whispers</i></h1>
+      <nav class="navigation">
+        <a href="#" class="nav-link" onclick="showSection('appearance')"><i>Appearance</i></a>
+        <a href="#" class="nav-link" onclick="showSection('personality')"><i>Personality</i></a>
+        <a href="#" class="nav-link" onclick="showSection('biography')"><i>Biography</i></a>
+        <a href="#" class="nav-link" onclick="showSection('relationships')"><i>Relationships</i></a>
+        <a href="#" class="nav-link" onclick="showSection('likes')"><i>Likes & Dislikes</i></a>
+        <a href="#" class="nav-link" onclick="showSection('writing')"><i>Writing</i></a>
+      </nav>
+    </div>
+    <div class="main-content">
+      <section id="appearance" class="content-section">
+        <p>angel is slender and silent, bearing long raven-black hair and one hazel eye beside one pale blue. she often wears pale, sheer or neutral clothing, and exudes a ghostlike grace. her presence is quiet, nearly immaterial.</p>
+        <div class="nav-arrows">
+          <button onclick="showSection('personality')">↓</button>
+        </div>
+      </section>
+      <section id="personality" class="content-section hidden">
+        <p>she is observant, careful, melancholic. she thinks in soft spirals and speaks gently. reserved but emotionally complex. angel is a mirror to others, often losing herself within their moods.</p>
+        <div class="nav-arrows">
+          <button onclick="showSection('appearance')">↑</button>
+          <button onclick="showSection('biography')">↓</button>
+        </div>
+      </section>
+      <section id="biography" class="content-section hidden">
+        <p>angel was born between time zones, moving often. she spent years in boarding schools, reading by candlelight and keeping to herself. her present is made of blurred mornings, heavy eyelids and neverending notebooks.</p>
+        <div class="nav-arrows">
+          <button onclick="showSection('personality')">↑</button>
+          <button onclick="showSection('relationships')">↓</button>
+        </div>
+      </section>
+      <section id="relationships" class="content-section hidden">
+        <p>she has brief connections. her most important relationship is zeny, someone with whom words are scarce but meaning overflows. with others, she is polite but unreachable.</p>
+        <div class="nav-arrows">
+          <button onclick="showSection('biography')">↑</button>
+          <button onclick="showSection('likes')">↓</button>
+        </div>
+      </section>
+      <section id="likes" class="content-section hidden">
+        <p>likes: typewriters, old poetry books, cold hands, tea with too much milk. dislikes: loud voices, digital clocks, fluorescent lighting, being misunderstood.</p>
+        <div class="nav-arrows">
+          <button onclick="showSection('relationships')">↑</button>
+          <button onclick="showSection('writing')">↓</button>
+        </div>
+      </section>
+      <section id="writing" class="content-section hidden">
+        <p>[You can paste poetry, fragments, or diary-like entries here.]</p>
+        <div class="nav-arrows">
+          <button onclick="showSection('likes')">↑</button>
+          <button onclick="enterSite()">↑ back to home</button>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    function enterSite() {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('site').classList.remove('hidden');
+    }
+    function showSection(id) {
+      document.querySelectorAll('.content-section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
